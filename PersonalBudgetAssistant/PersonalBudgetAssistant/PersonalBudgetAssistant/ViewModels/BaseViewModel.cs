@@ -1,16 +1,16 @@
-﻿using PersonalBudgetAssistant.Models;
-using PersonalBudgetAssistant.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using PersonalBudgetAssistant.DataAccess.Models;
+using PersonalBudgetAssistant.DataAccess.Repositories.Common;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IRepositoryBase<ExpenseCategory> DataStore => DependencyService.Get<IRepositoryBase<ExpenseCategory>>();
 
         bool isBusy = false;
         public bool IsBusy

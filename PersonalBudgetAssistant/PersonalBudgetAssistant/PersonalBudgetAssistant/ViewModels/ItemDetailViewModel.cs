@@ -43,10 +43,9 @@ namespace PersonalBudgetAssistant.ViewModels
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id;
-                Text = item.Text;
-                Description = item.Description;
+                var item = await DataStore.FindByIdAsync(itemId);
+                Id = item.Id.ToString();
+                Text = item.Name;
             }
             catch (Exception)
             {

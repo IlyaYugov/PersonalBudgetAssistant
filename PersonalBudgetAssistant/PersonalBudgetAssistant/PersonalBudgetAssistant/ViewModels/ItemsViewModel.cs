@@ -4,26 +4,27 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using PersonalBudgetAssistant.DataAccess.Models;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private ExpenseCategory _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<ExpenseCategory> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<ExpenseCategory> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<ExpenseCategory>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<ExpenseCategory>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -35,7 +36,7 @@ namespace PersonalBudgetAssistant.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetAllAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);
@@ -57,7 +58,7 @@ namespace PersonalBudgetAssistant.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public ExpenseCategory SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,7 +73,7 @@ namespace PersonalBudgetAssistant.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(ExpenseCategory item)
         {
             if (item == null)
                 return;

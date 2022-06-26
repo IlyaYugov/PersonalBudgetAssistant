@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using PersonalBudgetAssistant.DataAccess.Models;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
@@ -49,14 +50,13 @@ namespace PersonalBudgetAssistant.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            ExpenseCategory newItem = new ExpenseCategory()
             {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
+                Name = Text,
+                //Description = Description
             };
 
-            await DataStore.AddItemAsync(newItem);
+            await DataStore.AddAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
