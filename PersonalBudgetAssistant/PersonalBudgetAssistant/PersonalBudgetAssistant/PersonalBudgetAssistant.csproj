@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -12,5 +12,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\PersonalBudgetAssistant.DataAccess\PersonalBudgetAssistant.DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ExpenseCategoryDetailsPage.xaml.cs">
+      <DependentUpon>ExpenseCategoryDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExpenseCategoriesPage.xaml.cs">
+      <DependentUpon>ExpenseCategoriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewExpenseCategoryPage.xaml.cs">
+      <DependentUpon>NewExpenseCategoryPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

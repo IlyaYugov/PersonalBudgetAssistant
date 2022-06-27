@@ -9,8 +9,8 @@ namespace PersonalBudgetAssistant
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(ExpenseCategoryDetailsPage), typeof(ExpenseCategoryDetailsPage));
+            Routing.RegisterRoute(nameof(NewExpenseCategoryPage), typeof(NewExpenseCategoryPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

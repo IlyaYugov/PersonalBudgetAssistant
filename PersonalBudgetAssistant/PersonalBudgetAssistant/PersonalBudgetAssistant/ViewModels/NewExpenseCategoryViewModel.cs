@@ -1,19 +1,13 @@
-﻿using PersonalBudgetAssistant.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using PersonalBudgetAssistant.DataAccess.Models;
+﻿using PersonalBudgetAssistant.DataAccess.Models;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
 {
-    public class NewItemViewModel : BaseViewModel
+    public class NewExpenseCategoryViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
+        private string _name;
 
-        public NewItemViewModel()
+        public NewExpenseCategoryViewModel()
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
@@ -23,20 +17,13 @@ namespace PersonalBudgetAssistant.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !string.IsNullOrWhiteSpace(_name);
         }
 
-        public string Text
+        public string Name
         {
-            get => text;
-            set => SetProperty(ref text, value);
-        }
-
-        public string Description
-        {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => _name;
+            set => SetProperty(ref _name, value);
         }
 
         public Command SaveCommand { get; }
@@ -50,13 +37,13 @@ namespace PersonalBudgetAssistant.ViewModels
 
         private async void OnSave()
         {
-            ExpenseCategory newItem = new ExpenseCategory()
+            ExpenseCategory category = new ExpenseCategory()
             {
-                Name = Text,
+                Name = Name,
                 //Description = Description
             };
 
-            await DataStore.AddAsync(newItem);
+            await DataStore.AddAsync(category);
             await UnitOfWork.SaveChangesAsync();
 
             // This will pop the current page off the navigation stack
