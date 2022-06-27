@@ -1,7 +1,5 @@
-﻿using PersonalBudgetAssistant.ViewModels;
-using PersonalBudgetAssistant.Views;
+﻿using PersonalBudgetAssistant.Views;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant
