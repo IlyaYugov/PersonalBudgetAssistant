@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using PersonalBudgetAssistant.DataAccess;
 using PersonalBudgetAssistant.DataAccess.Models;
 using PersonalBudgetAssistant.DataAccess.Repositories.Common;
+using PersonalBudgetAssistant.DataAccess.Repositories.Common.UnitOfWorks;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IRepositoryBase<ExpenseCategory> DataStore => DependencyService.Get<IRepositoryBase<ExpenseCategory>>();
+        public BaseViewModel()
+        {
+            var dbContext = DependencyService.Get<BudgetContext>();
+            DataStore = new RepositoryBase<ExpenseCategory>(dbContext);
+            UnitOfWork = new UnitOfWork(dbContext);
+        }
+
+        protected readonly IRepositoryBase<ExpenseCategory> DataStore;
+        protected IUnitOfWork UnitOfWork;
 
         bool isBusy = false;
         public bool IsBusy

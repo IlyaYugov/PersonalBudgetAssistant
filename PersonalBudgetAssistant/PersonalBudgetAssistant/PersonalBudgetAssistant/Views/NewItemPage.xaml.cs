@@ -3,6 +3,7 @@ using PersonalBudgetAssistant.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using PersonalBudgetAssistant.DataAccess.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace PersonalBudgetAssistant.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public ExpenseCategory ExpenseCategory { get; set; }
 
         public NewItemPage()
         {

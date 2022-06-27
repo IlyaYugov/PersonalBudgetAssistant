@@ -5,8 +5,6 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using PersonalBudgetAssistant.DataAccess;
-using PersonalBudgetAssistant.DataAccess.Repositories.Common;
 
 namespace PersonalBudgetAssistant.DataAccess.Repositories.Common
 {
@@ -16,9 +14,9 @@ namespace PersonalBudgetAssistant.DataAccess.Repositories.Common
 
         private readonly DbSet<TEntity> _dbSet;
 
-        public RepositoryBase()
+        public RepositoryBase(BudgetContext context)
         {
-            Context = new BudgetContext();
+            Context = context;
             _dbSet = Context.Set<TEntity>();
         }
 

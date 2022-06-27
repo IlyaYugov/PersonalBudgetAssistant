@@ -9,7 +9,7 @@ namespace PersonalBudgetAssistant.ViewModels
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel
     {
-        private string itemId;
+        private int itemId;
         private string text;
         private string description;
         public string Id { get; set; }
@@ -26,7 +26,7 @@ namespace PersonalBudgetAssistant.ViewModels
             set => SetProperty(ref description, value);
         }
 
-        public string ItemId
+        public int ItemId
         {
             get
             {
@@ -39,7 +39,7 @@ namespace PersonalBudgetAssistant.ViewModels
             }
         }
 
-        public async void LoadItemId(string itemId)
+        public async void LoadItemId(int itemId)
         {
             try
             {

@@ -57,6 +57,7 @@ namespace PersonalBudgetAssistant.ViewModels
             };
 
             await DataStore.AddAsync(newItem);
+            await UnitOfWork.SaveChangesAsync();
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
