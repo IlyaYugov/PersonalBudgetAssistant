@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalBudgetAssistant.Views.ExpenseCategoriesPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:PersonalBudgetAssistant.ViewModels"  
-             xmlns:model="clr-namespace:PersonalBudgetAssistant.DataAccess.Models;assembly=PersonalBudgetAssistant.DataAccess"  
+             xmlns:model="clr-namespace:PersonalBudgetAssistant.DataAccess.Models;assembly=PersonalBudgetAssistant.DataAccess"
+             xmlns:expenseCategories="clr-namespace:PersonalBudgetAssistant.ViewModels.ExpenseCategories;assembly=PersonalBudgetAssistant"
              x:Name="ExpenseCategoriesPagee">
 
     <ContentPage.ToolbarItems>
@@ -14,7 +14,7 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-    <RefreshView x:DataType="local:ExpenseCategoriesViewModel" 
+    <RefreshView x:DataType="expenseCategories:ExpenseCategoriesViewModel" 
                  Command="{Binding LoadExpenseCategoriesCommand}" 
                  IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="ItemsListView"
@@ -34,7 +34,7 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ExpenseCategoriesViewModel}}, Path=CategoryTapped}"		
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type expenseCategories:ExpenseCategoriesViewModel}}, Path=CategoryTapped}"		
                                 CommandParameter="{Binding .}">
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>

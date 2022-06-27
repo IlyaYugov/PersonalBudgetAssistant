@@ -1,5 +1,6 @@
 ﻿using PersonalBudgetAssistant.ViewModels;
 using PersonalBudgetAssistant.DataAccess.Models;
+using PersonalBudgetAssistant.ViewModels.ExpenseCategories;
 using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.Views

@@ -1,12 +1,12 @@
-﻿using PersonalBudgetAssistant.Views;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using PersonalBudgetAssistant.DataAccess.Models;
+using PersonalBudgetAssistant.Views;
 using Xamarin.Forms;
 
-namespace PersonalBudgetAssistant.ViewModels
+namespace PersonalBudgetAssistant.ViewModels.ExpenseCategories
 {
     public class ExpenseCategoriesViewModel : BaseViewModel
     {
@@ -19,7 +19,7 @@ namespace PersonalBudgetAssistant.ViewModels
 
         public ExpenseCategoriesViewModel()
         {
-            Title = "Browse";
+            Title = "Expense Categories";
             Categories = new ObservableCollection<ExpenseCategory>();
             LoadExpenseCategoriesCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

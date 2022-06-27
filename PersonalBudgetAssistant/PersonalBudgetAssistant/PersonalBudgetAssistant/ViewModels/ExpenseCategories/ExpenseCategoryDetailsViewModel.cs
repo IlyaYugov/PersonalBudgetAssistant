@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using Xamarin.Forms;
 
-namespace PersonalBudgetAssistant.ViewModels
+namespace PersonalBudgetAssistant.ViewModels.ExpenseCategories
 {
     [QueryProperty(nameof(ExpenseCategoryId), nameof(ExpenseCategoryId))]
     public class ExpenseCategoryDetailsViewModel : BaseViewModel

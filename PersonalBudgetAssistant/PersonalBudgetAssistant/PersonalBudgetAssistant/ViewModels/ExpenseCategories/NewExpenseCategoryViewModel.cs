@@ -1,7 +1,7 @@
 ﻿using PersonalBudgetAssistant.DataAccess.Models;
 using Xamarin.Forms;
 
-namespace PersonalBudgetAssistant.ViewModels
+namespace PersonalBudgetAssistant.ViewModels.ExpenseCategories
 {
     public class NewExpenseCategoryViewModel : BaseViewModel
     {
