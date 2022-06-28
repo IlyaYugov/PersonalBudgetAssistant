@@ -11,6 +11,8 @@ namespace PersonalBudgetAssistant.DataAccess
 
         public BudgetContext()
         {
+            SQLitePCL.Batteries_V2.Init();
+
             if (_isInitialized)
             {
                 return;
@@ -36,8 +38,8 @@ namespace PersonalBudgetAssistant.DataAccess
         }
 
         public DbSet<Expense> Expenses { get; set; }
-
         public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
+        public DbSet<ExpensePlan> ExpensePlans { get; set; }
     }
 }
 
