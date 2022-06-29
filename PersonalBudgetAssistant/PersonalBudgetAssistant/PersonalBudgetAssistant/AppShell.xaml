@@ -60,11 +60,11 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <FlyoutItem Title="About" Icon="icon_about.png">
-        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    <FlyoutItem Title="Expense" Icon="icon_about.png">
+        <ShellContent Route="Expense" ContentTemplate="{DataTemplate local:ExpensePage}" />
     </FlyoutItem>
     <FlyoutItem Title="Expense Categories" Icon="icon_feed.png">
-        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ExpenseCategoriesPage}" />
+        <ShellContent Route="ExpenseCategoriesPage" ContentTemplate="{DataTemplate local:ExpenseCategoriesPage}" />
     </FlyoutItem>
 
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

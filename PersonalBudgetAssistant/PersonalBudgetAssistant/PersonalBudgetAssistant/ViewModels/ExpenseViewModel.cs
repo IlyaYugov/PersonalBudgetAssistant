@@ -5,11 +5,11 @@ using Xamarin.Forms;
 
 namespace PersonalBudgetAssistant.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class ExpenseViewModel : BaseViewModel
     {
-        public AboutViewModel()
+        public ExpenseViewModel()
         {
-            Title = "About";
+            Title = "Expense";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 

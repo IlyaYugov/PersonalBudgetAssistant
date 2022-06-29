@@ -69,7 +69,7 @@ namespace PersonalBudgetAssistant.ViewModels.ExpenseCategories
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewExpenseCategoryPage));
+            await Shell.Current.GoToAsync(nameof(ExpenseCategoryPage));
         }
 
         async void OnItemSelected(ExpenseCategory category)
@@ -78,7 +78,7 @@ namespace PersonalBudgetAssistant.ViewModels.ExpenseCategories
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ExpenseCategoryDetailsPage)}?{nameof(ExpenseCategoryDetailsViewModel.ExpenseCategoryId)}={category.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ExpenseCategoryPage)}?{nameof(ExpenseCategoryViewModel.Id)}={category.Id}");
         }
     }
 }

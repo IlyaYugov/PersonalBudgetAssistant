@@ -1,6 +1,6 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonalBudgetAssistant.Views.NewExpenseCategoryPage"
+             x:Class="PersonalBudgetAssistant.Views.ExpenseCategoryPage"
              Shell.PresentationMode="ModalAnimated"
              Title="New Item"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
@@ -9,8 +9,6 @@
         <StackLayout Spacing="3" Padding="15">
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

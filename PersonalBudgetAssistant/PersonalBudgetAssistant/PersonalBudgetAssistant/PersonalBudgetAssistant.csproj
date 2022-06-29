@@ -15,14 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ExpenseCategoryDetailsPage.xaml.cs">
-      <DependentUpon>ExpenseCategoryDetailsPage.xaml</DependentUpon>
+    <Compile Update="Views\ExpensePage.xaml.cs">
+      <DependentUpon>ExpensePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ExpenseCategoriesPage.xaml.cs">
       <DependentUpon>ExpenseCategoriesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\NewExpenseCategoryPage.xaml.cs">
-      <DependentUpon>NewExpenseCategoryPage.xaml</DependentUpon>
+    <Compile Update="Views\ExpenseCategoryPage.xaml.cs">
+      <DependentUpon>ExpenseCategoryPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
